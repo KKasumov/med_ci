@@ -1,0 +1,69 @@
+server:
+  servlet:
+    encoding:
+      charset: UTF-8
+      force-response: true
+
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/med_ci_db?serverTimezone=UTC
+    username: postgres
+    password: password
+  jpa:
+    show-sql: false
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQL95Dialect
+  mvc:
+    hiddenmethod:
+      filter:
+        enabled: true
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  mail:
+    host: smtp.mail.ru
+    port: 465
+    username: myEmail
+    password: xn2Ls55wiYMEpggV0Hk9
+    protocol: smtps
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+logging:
+  level:
+    root: info
+
+mis:
+  property:
+    runInitialize: false
+    doctorScope: 28
+    patientScope: 14
+    talonsOnDay: 8
+    invite:
+      expirationPeriod:
+        hours: 24
+    jwtSecret: 2WDyxupWfBNhqvyXiAILSAOtjpLsLM
+    jwtExpirationMs: 86400000
+
+testSystem:
+  server:
+    address: http://localhost:8082
+
+  property:
+    login: checker0mail.ru
+    password: checker0
+
+app:
+  feign:
+    config:
+      name: Test-server
+      url: http://localhost:8082
+bot:
+  name: myName
+  token: myToken

@@ -1,0 +1,5 @@
+ALTER TABLE smo
+    ADD code VARCHAR(50) NOT NULL;
+
+ALTER TABLE smo
+    ADD UNIQUE (code);

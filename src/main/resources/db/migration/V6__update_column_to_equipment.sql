@@ -1,0 +1,1 @@
+ALTER TABLE equipment ALTER COLUMN position_id DROP NOT NULL;
